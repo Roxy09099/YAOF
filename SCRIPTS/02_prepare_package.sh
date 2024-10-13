@@ -5,6 +5,9 @@ clear
 # 使用 O2 级别的优化
 sed -i 's/Os/O2/g' include/target.mk
 # 更新 Feeds
+git clone --depth 1 https://github.com/x-wrt/com.x-wrt package/x
+cp -rf package/x/net/mwan3plus package/mwan3plus
+rm -rf package/x
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 # 默认开启 Irqbalance
