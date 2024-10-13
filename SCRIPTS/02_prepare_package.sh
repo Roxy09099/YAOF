@@ -8,6 +8,7 @@ sed -i 's/Os/O2/g' include/target.mk
 git clone --depth 1 https://github.com/x-wrt/com.x-wrt package/x
 cp -rf package/x/net/mwan3plus package/mwan3plus
 rm -rf package/x
+sed -i 's/192.168.1.1/192.168.15.1/g' package/base-files/files/bin/config_generate
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 # 默认开启 Irqbalance
